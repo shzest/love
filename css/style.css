@@ -1,0 +1,351 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    overflow-x: hidden;
+    background-color: #f7eafc;
+    color: #4d004d;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Decorative Elements */
+.decorative-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.heart, .flower, .star {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    animation: float 8s infinite ease-in-out;
+}
+
+.heart {
+    background-image: url('https://img.icons8.com/emoji/48/heart-suit.png');
+    width: 40px;
+    height: 40px;
+}
+
+.flower {
+    background-image: url('https://img.icons8.com/emoji/48/cherry-blossom.png');
+    width: 50px;
+    height: 50px;
+}
+
+.star {
+    background-image: url('https://img.icons8.com/emoji/48/star.png');
+    width: 35px;
+    height: 35px;
+}
+
+/* Positioned Elements */
+.heart:nth-child(1), .flower:nth-child(1), .star:nth-child(1) {
+    top: 10%; left: 5%;
+}
+.heart:nth-child(2), .flower:nth-child(2), .star:nth-child(2) {
+    top: 30%; right: 10%;
+}
+.heart:nth-child(3), .flower:nth-child(3), .star:nth-child(3) {
+    bottom: 20%; left: 15%;
+}
+.heart:nth-child(4), .flower:nth-child(4), .star:nth-child(4) {
+    top: 15%; right: 20%;
+}
+
+/* Welcome Section */
+#welcome-section {
+    height: 100vh;
+    background: linear-gradient(135deg, #d8a4d8, #f1c7f1);
+    color: #4d004d;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(77, 0, 77, 0.5);
+}
+
+p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+#enter-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #ffffff;
+    color: #4d004d;
+    border: 3px solid #d8a4d8;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 3px 3px 10px rgba(77, 0, 77, 0.3);
+}
+
+#enter-button:hover {
+    background-color: #fbe3fc;
+    transform: scale(1.1);
+}
+
+/* Content Section */
+#content-section {
+    height: 100vh;
+    background: #fdeffb;
+    color: #4d004d;
+    display: none;
+    z-index: 1;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(77, 0, 77, 0.5);
+}
+
+/* Gallery */
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Quotes */
+.quote {
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.quote:hover {
+    color: #ff66b3;
+}
+
+/* Counter */
+.counter p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* Music */
+audio {
+    display: none;
+}
+
+/* Special Message */
+.special-message {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+/* Animación */
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0.3; }
+    50% { transform: translateY(-15px); opacity: 0.6; }
+    100% { transform: translateY(0); opacity: 0.3; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    #enter-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    #enter-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .gallery img {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Galería de fotos */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Botón de eliminar imagen */
+.delete-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4d004d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d8a4d8;
+}
+
+/* Estilo para el botón de elegir fotos */
+#image-upload {
+    display: none; /* Ocultar el input de archivo */
+}
+
+#upload-button {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    background-color: #4d004d; /* Lila oscuro */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+#upload-button:hover {
+    background-color: #d8a4d8; /* Lila pastel */
+    transform: scale(1.05);
+}
+
+#upload-button:active {
+    background-color: #ff66b3; /* Lila brillante */
+    transform: scale(1);
+}
+
+#upload-button::before {
+    content: "💖 "; /* Icono romántico antes del texto */
+}
+
+#upload-button span {
+    margin-left: 10px;
+}
+
+/* Estilo del input de tipo archivo (cuando se usa como botón) */
+#image-upload-label {
+    display: inline-block;
+    background-color: #ff66b3; /* Rosa brillante */
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#image-upload-label:hover {
+    background-color: #ff3385;
+    transform: scale(1.05);
+}
+
+#image-upload-label:active {
+    background-color: #e60073;
+    transform: scale(1);
+}
+
+/* Estilo del botón flotante */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff66b3; /* Rosa brillante */
+    color: white;
+    padding: 15px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Inicialmente oculto */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #ff3385;
+    transform: scale(1.05);
+}
+
+#back-to-top:active {
+    background-color: #e60073;
+    transform: scale(1);
+}
